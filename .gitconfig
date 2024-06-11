@@ -1,0 +1,20 @@
+[user]
+	name = Contsantine Bulany
+	email = 61948252+lostl1ght@users.noreply.github.com
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[push]
+	default = current
+[color]
+	branch = true
+	interactive = true
+	diff = true
+	grep = true
+	status = true
+[core]
+	autocrlf = input
+[rebase]
+	autoStash = true
