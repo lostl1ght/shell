@@ -1,0 +1,25 @@
+gui:
+  theme:
+    lightTheme: false
+    selectedLineBgColor:
+      - default
+    selectedRangeBgColor:
+      - default
+      - bold
+  showRandomTip: true
+  showIcons: true
+  nerdFontsVersion: 3
+git:
+  paging:
+    colorArg: always
+    useConfig: false
+    # pager: 'delta --paging=never'
+    # pager: 'delta --paging=never --diff-so-fancy'
+    pager: 'delta --paging=never --diff-highlight'
+os:
+  editPreset: 'nvim'
+confirmOnQuit: false
+quitOnTopLevelReturn: false
+disableStartupPopups: true
+notARepository: 'quit'
+promptToReturnFromSubprocess: false
