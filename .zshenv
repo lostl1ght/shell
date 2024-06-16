@@ -57,11 +57,16 @@ fi
 # export LESS="--mouse --wheel-lines=3 -R"
 
 # Ssh agent
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # x410 with WSL
-# if [[ "$(uname -r | grep "WSL" )" ]]; then
-#     #export DISPLAY="$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0"
-#     export DISPLAY=$(ip route | grep default | awk '{print $3; exit;}'):0.0
-#     export GDK_BACKEND="x11"
-# fi
+if [[ "$(uname -r | grep "WSL" )" ]]; then
+    # TCP
+    # export DISPLAY="$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0"
+    # export DISPLAY=$(ip route | grep default | awk '{print $3; exit;}'):0.0
+
+    # VSOCK
+    export DISPLAY=':0.0'
+
+    export GDK_BACKEND="x11"
+fi
