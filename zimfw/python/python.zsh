@@ -1,12 +1,3 @@
-# act() {
-#     local env=$(pyenv versions | rg "([-\w]*) \-\->.*" -or '$1' | rg "$1" | sort | fzf --height=40% --layout=reverse -0 -1)
-#     if [[ -n "$env" ]]; then
-#         pyenv activate $env 2>/dev/null
-#         echo "Virtualenv '$env' has been activated"
-#         python --version
-#     fi
-# }
-
 act() {
     local venvdir=".venv"
     if [[ -n "$1" ]]; then
@@ -26,8 +17,6 @@ dea() {
         echo "No virtualenv has been activated" && false
         return
     fi
-    # local venv=$(pyenv version | rg " \(.*$" -r "")
-    # source deactivate 2>/dev/null
     local venv="$(echo $VIRTUAL_ENV | sed "s;^$HOME;~;")"
     deactivate
     echo "Virtualenv '$venv' has been deactivated"
@@ -38,5 +27,4 @@ jupyterlab() {
         act
     fi
     jupyter lab --ip $(hostname -I) --no-browser
-    # jupyter lab --ip $(python3 -c "import subprocess; subprocess.run(['hostname', '-I'], text=True).stdout") --no-browser
 }
