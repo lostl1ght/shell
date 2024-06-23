@@ -70,3 +70,8 @@ if [[ "$(uname -r | grep "WSL" )" ]]; then
 
     export GDK_BACKEND="x11"
 fi
+
+# Disable global compinit that conflicts with zimfw on ubuntu
+if [[ "$(grep -e 'ID.*=.*ubuntu' /etc/os-release)" ]]; then
+    skip_global_compinit=1
+fi
