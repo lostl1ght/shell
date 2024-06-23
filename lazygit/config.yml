@@ -13,9 +13,9 @@ git:
   paging:
     colorArg: always
     useConfig: false
-    # pager: 'delta --paging=never'
-    # pager: 'delta --paging=never --diff-so-fancy'
-    pager: 'delta --paging=never --diff-highlight'
+    # pager: 'delta --dark --paging=never'
+    # pager: 'delta --dark --paging=never --diff-so-fancy'
+    pager: 'delta --dark --paging=never --diff-highlight'
 os:
   editPreset: 'nvim'
 confirmOnQuit: false
