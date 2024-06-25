@@ -55,7 +55,7 @@ fi
 
 # Less options
 export PAGER="$(which less)"
-export LESS="--mouse --wheel-lines=3 -R"
+export LESS="--mouse --wheel-lines=3 -R -M -S"
 export SYSTEMD_PAGER="$PAGER"
 export SYSTEMD_LESS="$LESS"
 
