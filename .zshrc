@@ -66,28 +66,8 @@ alias sudo="sudo --preserve-env='PAGER,LESS,SYSTEMD_PAGER,SYSTEMD_LESS'"
 alias wget='wget -c '
 
 # Functions
-backup() {
-    cp -r "$1" "$1.bak"
-}
-
 mkcd() {
     [[ -n "${1}" ]] && mkdir -p "${1}" && builtin cd "${1}"
-}
-
-tarnow() {
-    tar cfa "$1.tar.gz" "$1"
-}
-
-untar() {
-    tar xfa "$1"
-}
-
-winip() {
-    local all
-    if [[ "$1" == 'a' ]]; then
-        all='/all'
-    fi
-    powershell.exe -c ipconfig "$all"
 }
 
 # Other initialization
