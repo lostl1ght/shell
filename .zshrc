@@ -62,6 +62,7 @@ alias lg='lazygit'
 alias ls='eza --group-directories-first --icons -1'
 alias py='python3'
 alias rm='rm --preserve-root'
+alias sudo="sudo --preserve-env='PAGER,LESS,SYSTEMD_PAGER,SYSTEMD_LESS'"
 alias wget='wget -c '
 
 # Functions

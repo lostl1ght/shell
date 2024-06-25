@@ -54,7 +54,10 @@ if [[ "$(which nvim)" ]]; then
 fi
 
 # Less options
-# export LESS="--mouse --wheel-lines=3 -R"
+export PAGER="$(which less)"
+export LESS="--mouse --wheel-lines=3 -R"
+export SYSTEMD_PAGER="$PAGER"
+export SYSTEMD_LESS="$LESS"
 
 # Ssh agent
 # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
