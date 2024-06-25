@@ -54,17 +54,15 @@ alias chmod='chmod --preserve-root -v'
 alias chown='chown --preserve-root -v'
 alias df='df -h'
 alias du='du -h'
-alias gstr="git status-recursive"
-alias hw="hwinfo --short"
-alias ip="ip --color=auto"
-alias la="eza --group-directories-first --icons --git -lahg"
-alias lzd="sudo lazydocker"
-alias lg="lazygit"
-alias ls="eza --group-directories-first --icons -1"
-alias py="python3"
+alias hw='hwinfo --short'
+alias ip='ip --color=auto'
+alias la='eza --group-directories-first --icons --git -lahg'
+alias lzd='sudo lazydocker'
+alias lg='lazygit'
+alias ls='eza --group-directories-first --icons -1'
+alias py='python3'
 alias rm='rm --preserve-root'
-alias t="trash"
-alias wget="wget -c "
+alias wget='wget -c '
 
 # Functions
 backup() {
