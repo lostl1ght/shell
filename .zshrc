@@ -2,7 +2,9 @@
 # Zsh configuration
 # -----------------
 ZSH_CACHE_DIR="$HOME/.cache/zsh"
-ZIM_CONFIG="$HOME/.config/zimfw"
+ZIM_HOME="$ZSH_CACHE_DIR/zim"
+ZIM_CONFIG_FILE="$HOME/.config/zimfw/zimrc.zsh"
+ZIM_CONFIG="${ZIM_CONFIG_FILE:h}"
 
 # History
 setopt HIST_IGNORE_ALL_DUPS
@@ -25,6 +27,9 @@ ssh() {
 # --------------------
 # Module configuration
 # --------------------
+
+# to use zimfw without git
+zstyle ':zim:zmodule' use 'degit'
 
 # git
 zstyle ':zim:git' aliases-prefix 'g'

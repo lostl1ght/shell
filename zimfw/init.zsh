@@ -1,8 +1,6 @@
 # ------------------
 # Initialize modules
 # ------------------
-export ZIM_HOME="$HOME/.local/share/zim"
-export ZIM_CONFIG="$HOME/.config/zimfw"
 fpath+="${ZSH_CACHE_DIR}/completions"
 
 if [[ ! -d "$ZSH_CACHE_DIR/completions" ]]; then
@@ -18,6 +16,9 @@ if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   fi
 fi
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG}/zimrc.zsh ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 
