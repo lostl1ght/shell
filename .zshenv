@@ -38,7 +38,7 @@ typeset -U PATH
 if [[ "$(which nvim)" ]]; then
     export EDITOR="$(which nvim)"
     export VISUAL="$EDITOR"
-    export MANPAGER="nvim +Man!"
+    export MANPAGER="$EDITOR +Man!"
 fi
 
 # Less options
