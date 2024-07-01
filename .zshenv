@@ -42,15 +42,16 @@ fi
 typeset -U PATH
 
 # Bat as man pager
-if [[ "$(which bat)" ]]; then
-    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-    export MANROFFOPT="-c"
-fi
+# if [[ "$(which bat)" ]]; then
+#     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#     export MANROFFOPT="-c"
+# fi
 
 # Editor variables
 if [[ "$(which nvim)" ]]; then
     export EDITOR="$(which nvim)"
     export VISUAL="$EDITOR"
+    export MANPAGER="nvim +Man!"
 fi
 
 # Less options
