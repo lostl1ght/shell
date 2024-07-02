@@ -75,6 +75,20 @@ mkcd() {
     [[ -n "${1}" ]] && mkdir -p "${1}" && builtin cd "${1}"
 }
 
+_ZO_FZF_SHARED=" \
+--no-sort \
+--bind=ctrl-z:ignore,btab:up,tab:down \
+--cycle \
+--keep-right \
+--layout=reverse \
+--tabstop=1 \
+--exit-0 \
+--info=inline \
+--border=rounded \
+"
+export _ZO_FZF_OPTS="--height=30% $_ZO_FZF_SHARED"
+unset _ZO_FZF_SHARED
+
 # Other initialization
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
