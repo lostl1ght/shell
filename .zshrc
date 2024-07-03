@@ -85,6 +85,7 @@ _ZO_FZF_SHARED=" \
 --exit-0 \
 --info=inline \
 --border=rounded \
+--select-1 \
 "
 export _ZO_FZF_OPTS="--height=30% $_ZO_FZF_SHARED"
 unset _ZO_FZF_SHARED
