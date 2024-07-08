@@ -1,9 +1,11 @@
 gui:
+  enlargedSideViewLocation: top
   theme:
     lightTheme: false
     selectedLineBgColor:
       - black
   showRandomTip: true
+  showCommandLog: false
   nerdFontsVersion: 3
 git:
   paging:
