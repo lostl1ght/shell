@@ -59,7 +59,9 @@ if [[ "$(uname -r | grep "WSL" )" ]]; then
     # VSOCK
     export DISPLAY=':0.0'
 
-    export GDK_BACKEND="x11"
+    export GDK_BACKEND='x11'
+
+    export BROWSER='firefox.exe'
 fi
 
 # Disable global compinit that conflicts with zimfw on ubuntu
