@@ -19,7 +19,7 @@ fi
 if [[ -d "$HOME/.local/go" ]]; then
     export GOROOT="$HOME/.local/go"
     export GOPATH="$HOME/.local/share/go"
-    export PATH="$GOROOT/bin:$PATH"
+    export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
 fi
 
 if [[ -d "$HOME/.local/bin" ]]; then
