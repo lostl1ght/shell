@@ -95,4 +95,4 @@ files = ["Makefile", "makefile"]
 format = "via [$symbol v$output ]($style)"
 symbol = ""
 style = "bold blue"
-shell = ["sh", "-c", "make --version | rg '^GNU Make (\\d+\\.\\d+)$' -or '$1'"]
+shell = ["sh", "-c", "make --version | rg '^GNU Make (\\d+\\.\\d+[\\.]*\\d*)$' -or '$1'"]
