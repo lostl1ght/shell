@@ -1,3 +1,7 @@
+if [[ -d "$HOME/.juliaup/bin" ]]; then
+    export PATH="$HOME/.juliaup/bin:$PATH"
+fi
+
 # PATH setup
 if [[ -x "$HOME/.deno/bin/deno" ]]; then
     export DENO_INSTALL="$HOME/.deno"
