@@ -68,7 +68,7 @@ if [[ "$(uname -r | grep "WSL" )" ]]; then
     export BROWSER='firefox.exe'
 fi
 
-# Disable global compinit that conflicts with zimfw on ubuntu
-if [[ "$(grep -e 'ID.*=.*ubuntu' /etc/os-release)" ]]; then
+# Disable global compinit that conflicts with zimfw on ubuntu or suse
+if [[ "$(grep -e 'ID.*=.*ubuntu\|ID.*=.*opensuse' /etc/os-release)" ]]; then
     skip_global_compinit=1
 fi
