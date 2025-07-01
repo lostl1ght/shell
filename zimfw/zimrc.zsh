@@ -9,7 +9,8 @@ zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
 
 # Modules that must be initialized last
-zmodule zdharma-continuum/fast-syntax-highlighting
+# zmodule zdharma-continuum/fast-syntax-highlighting
+zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 zmodule zsh-users/zsh-autosuggestions
 zmodule $ZIM_CONFIG/python
