@@ -20,10 +20,13 @@ if [[ -d "$HOME/.local/share/bob/nvim-bin" ]]; then
     export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 fi
 
-if [[ -d "$HOME/.local/go" ]]; then
-    export GOROOT="$HOME/.local/go"
+if [[ $(which go) ]]; then
     export GOPATH="$HOME/.local/share/go"
-    export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+    export PATH="$GOPATH/bin:$PATH"
+    if [[ -d "$HOME/.local/go" ]]; then
+        export GOROOT="$HOME/.local/go"
+        export PATH="$GOROOT/bin:$PATH"
+    fi
 fi
 
 if [[ -d "$HOME/.local/bin" ]]; then
