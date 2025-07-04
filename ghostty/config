@@ -2,3 +2,17 @@ font-family = JetBrainsMono NFM
 theme = Kanagawa Wave
 maximize = true
 unfocused-split-opacity = 1
+
+keybind = grave_accent>grave_accent=text:`
+
+keybind = grave_accent>v=new_split:right
+keybind = grave_accent>s=new_split:down
+keybind = grave_accent>e=new_tab
+
+keybind = grave_accent>h=goto_split:left
+keybind = grave_accent>j=goto_split:down
+keybind = grave_accent>k=goto_split:up
+keybind = grave_accent>l=goto_split:right
+
+keybind = grave_accent>c=close_surface
+keybind = grave_accent>shift+e=close_tab
