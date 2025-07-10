@@ -62,12 +62,10 @@ alias du='du -h'
 alias hw='hwinfo --short'
 alias ip='ip --color=auto'
 alias la='eza --group-directories-first --icons --git -lag'
-alias lzd='sudo lazydocker'
 alias lg='lazygit'
 alias ls='eza --group-directories-first --icons -1'
 alias py='python3'
 alias rm='rm --preserve-root'
-alias sudo="sudo --preserve-env='PAGER,LESS,SYSTEMD_PAGER,SYSTEMD_LESS'"
 alias wget='wget -c '
 
 # Functions
