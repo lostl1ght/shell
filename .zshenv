@@ -8,7 +8,7 @@ if [[ -x "$HOME/.deno/bin/deno" ]]; then
     export PATH="$DENO_INSTALL/bin:$PATH"
 fi
 
-if [[ -x "$HOME/.cargo/bin/cargo" ]]; then
+if [[ -d "$HOME/.cargo/bin" ]]; then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
