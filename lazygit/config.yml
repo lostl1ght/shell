@@ -5,7 +5,7 @@ gui:
     selectedLineBgColor:
       - black
   showRandomTip: true
-  showCommandLog: false
+  showCommandLog: true
   nerdFontsVersion: 3
 git:
   paging:
