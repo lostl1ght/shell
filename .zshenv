@@ -20,7 +20,7 @@ if [[ -d "$HOME/.local/share/bob/nvim-bin" ]]; then
     export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 fi
 
-if [[ $(which go) ]]; then
+if command -v go >/dev/null 2>&1; then
     export GOPATH="$HOME/.local/share/go"
     export PATH="$GOPATH/bin:$PATH"
     if [[ -d "$HOME/.local/go" ]]; then
@@ -42,14 +42,14 @@ typeset -U PATH
 # fi
 
 # Editor variables
-if [[ "$(which nvim)" ]]; then
-    export EDITOR="$(which nvim)"
+if command -v nvim >/dev/null 2>&1; then
+    export EDITOR="$(command -v nvim)"
     export VISUAL="$EDITOR"
     export MANPAGER="$EDITOR +Man!"
 fi
 
 # Less options
-export PAGER="$(which less)"
+export PAGER="$(command -v less)"
 export LESS="--mouse --wheel-lines=3 -R -M -S"
 export SYSTEMD_PAGER="$PAGER"
 export SYSTEMD_LESS="$LESS"
