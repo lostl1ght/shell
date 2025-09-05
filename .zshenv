@@ -23,10 +23,10 @@ fi
 if command -v go >/dev/null 2>&1; then
     export GOPATH="$HOME/.local/share/go"
     export PATH="$GOPATH/bin:$PATH"
-    if [[ -d "$HOME/.local/go" ]]; then
-        export GOROOT="$HOME/.local/go"
-        export PATH="$GOROOT/bin:$PATH"
-    fi
+elif [[ -d "$HOME/.local/go" ]]; then
+    export GOPATH="$HOME/.local/share/go"
+    export GOROOT="$HOME/.local/go"
+    export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 fi
 
 if [[ -d "$HOME/.local/bin" ]]; then
