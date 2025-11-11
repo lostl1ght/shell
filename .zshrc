@@ -88,6 +88,10 @@ _ZO_FZF_SHARED=" \
 export _ZO_FZF_OPTS="--height=30% $_ZO_FZF_SHARED"
 unset _ZO_FZF_SHARED
 
+# zsh-fzf-history-search
+export ZSH_FZF_HISTORY_SEARCH_EVENT_NUMBERS=0
+export ZSH_FZF_HISTORY_SEARCH_DATES_IN_SEARCH=0
+
 # Other initialization
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

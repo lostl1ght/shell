@@ -13,6 +13,7 @@ zmodule completion
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 zmodule zsh-users/zsh-autosuggestions
+zmodule joshskidmore/zsh-fzf-history-search
 zmodule $ZIM_CONFIG/python
 # zmodule $ZIM_CONFIG/swank
 # zmodule $ZIM_CONFIG/sudo
