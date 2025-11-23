@@ -85,10 +85,12 @@ _ZO_FZF_SHARED=" \
 --border=rounded \
 --select-1 \
 "
+# zoxide
 export _ZO_FZF_OPTS="--height=30% $_ZO_FZF_SHARED"
 unset _ZO_FZF_SHARED
 
 # zsh-fzf-history-search
+export ZSH_FZF_HISTORY_SEARCH_FZF_ARGS="$_ZO_FZF_OPTS"
 export ZSH_FZF_HISTORY_SEARCH_EVENT_NUMBERS=0
 export ZSH_FZF_HISTORY_SEARCH_DATES_IN_SEARCH=0
 
