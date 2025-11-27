@@ -8,11 +8,13 @@ gui:
   showCommandLog: true
   nerdFontsVersion: 3
 git:
-  paging:
-    colorArg: always
-    # pager: 'delta --dark --paging=never'
-    # pager: 'delta --dark --paging=never --diff-so-fancy'
-    pager: 'delta --dark --paging=never --diff-highlight'
+  pagers:
+    - colorArg: always
+      pager: 'delta --dark --paging=never --diff-highlight'
+    - colorArg: always
+      pager: 'delta --dark --paging=never --diff-so-fancy'
+    - colorArg: always
+      pager: 'delta --dark --paging=never'
 confirmOnQuit: false
 quitOnTopLevelReturn: false
 os:
