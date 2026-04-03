@@ -15,15 +15,6 @@ bindkey -e
 # Remove path separator from WORDCHARS.
 WORDCHARS=${WORDCHARS//[\/]}
 
-# Set window title
-precmd () {
-    print -Pn "\e]0;%~\a"
-}
-ssh() {
-    print -Pn "\e]0;[$1]\a"
-    command ssh $@
-}
-
 # --------------------
 # Module configuration
 # --------------------
@@ -66,7 +57,7 @@ alias lg='lazygit'
 alias ls='eza --group-directories-first --icons -1'
 alias py='python3'
 alias rm='rm --preserve-root'
-alias wget='wget -c '
+alias wget='wget -c'
 
 # Functions
 mkcd() {
@@ -95,5 +86,12 @@ export ZSH_FZF_HISTORY_SEARCH_EVENT_NUMBERS=0
 export ZSH_FZF_HISTORY_SEARCH_DATES_IN_SEARCH=0
 
 # Other initialization
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+if command -v starship &>/dev/null; then
+    eval "$(starship init zsh)"
+fi
+if command -v zoxide &>/dev/null; then
+    eval "$(zoxide init zsh)"
+fi
+if [ -e /etc/zsh_command_not_found ]; then
+    source /etc/zsh_command_not_found
+fi
