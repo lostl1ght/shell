@@ -86,6 +86,15 @@ export ZSH_FZF_HISTORY_SEARCH_EVENT_NUMBERS=0
 export ZSH_FZF_HISTORY_SEARCH_DATES_IN_SEARCH=0
 
 # Other initialization
+if command -v yazi &>/dev/null; then
+    function y() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        command yazi "$@" --cwd-file="$tmp"
+        IFS= read -r -d '' cwd < "$tmp"
+        [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+        rm -f -- "$tmp"
+    }
+fi
 if command -v starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
