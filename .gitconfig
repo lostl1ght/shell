@@ -1,5 +1,5 @@
 [user]
-	name = Contsantine Bulany
+	name = Constantine Bulany
 	email = lostl1ght@users.noreply.github.com
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
