@@ -104,3 +104,7 @@ fi
 if [ -e /etc/zsh_command_not_found ]; then
     source /etc/zsh_command_not_found
 fi
+
+if [ -n "$NVM_DIR" ] && [ -s "$NVM_DIR/bash_completion" ]; then
+    source "$NVM_DIR/bash_completion"
+fi

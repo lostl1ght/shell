@@ -1,42 +1,55 @@
-if [[ -d "$HOME/.juliaup/bin" ]]; then
+
+if [ -d "$HOME/.opencode/bin" ]; then
+    export PATH="$HOME/.opencode/bin:$PATH"
+fi
+
+if [ -d "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    if [ -s "$NVM_DIR/nvm.sh" ]; then
+        source "$NVM_DIR/nvm.sh"
+    fi
+
+fi
+
+if [ -d "$HOME/.juliaup/bin" ]; then
     export PATH="$HOME/.juliaup/bin:$PATH"
 fi
 
 # PATH setup
-if [[ -x "$HOME/.deno/bin/deno" ]]; then
+if [ -x "$HOME/.deno/bin/deno" ]; then
     export DENO_INSTALL="$HOME/.deno"
     export PATH="$DENO_INSTALL/bin:$PATH"
 fi
 
-if [[ -d "$HOME/.cargo/bin" ]]; then
-    export PATH="$HOME/.cargo/bin:$PATH"
+if [ -s "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
 fi
 
-if [[ -d "$HOME/.npm-global/bin" ]]; then
+if [ -d "$HOME/.npm-global/bin" ]; then
     export PATH="$HOME/.npm-global/bin:$PATH"
 fi
 
-if [[ -d "$HOME/.local/share/bob/nvim-bin" ]]; then
+if [ -d "$HOME/.local/share/bob/nvim-bin" ]; then
     export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 fi
 
 if command -v go >/dev/null 2>&1; then
     export GOPATH="$HOME/.local/share/go"
     export PATH="$GOPATH/bin:$PATH"
-elif [[ -d "$HOME/.local/go" ]]; then
+elif [ -d "$HOME/.local/go" ]; then
     export GOPATH="$HOME/.local/share/go"
     export GOROOT="$HOME/.local/go"
     export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 fi
 
-if [[ -d "$HOME/.local/bin" ]]; then
+if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
 typeset -U PATH
 
 # Bat as man pager
-# if [[ "$(which bat)" ]]; then
+# if [ "$(which bat)" ]; then
 #     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #     export MANROFFOPT="-c"
 # fi
@@ -58,7 +71,7 @@ export SYSTEMD_LESS="$LESS"
 # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # x410 with WSL
-if [[ "$(uname -r | grep "WSL" )" ]]; then
+if [ "$(uname -r | grep "WSL" )" ]; then
     # TCP
     # export DISPLAY="$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0"
     # export DISPLAY=$(ip route | grep default | awk '{print $3; exit;}'):0.0
@@ -72,6 +85,6 @@ if [[ "$(uname -r | grep "WSL" )" ]]; then
 fi
 
 # Disable global compinit that conflicts with zimfw on ubuntu or suse
-if [[ "$(grep -e 'ID.*=.*ubuntu\|ID.*=.*opensuse' /etc/os-release)" ]]; then
+if [ "$(grep -e 'ID.*=.*ubuntu\|ID.*=.*opensuse' /etc/os-release)" ]; then
     skip_global_compinit=1
 fi
