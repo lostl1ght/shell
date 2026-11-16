@@ -1,6 +1,13 @@
+if [ -d "$HOME/.local/musl-cross/x86_64-linux-musl/bin" ]; then
+    PATH="$HOME/.local/musl-cross/x86_64-linux-musl/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/musl-cross/aarch64-linux-musl/bin" ]; then
+    PATH="$HOME/.local/musl-cross/aarch64-linux-musl/bin:$PATH"
+fi
 
 if [ -d "$HOME/.opencode/bin" ]; then
-    export PATH="$HOME/.opencode/bin:$PATH"
+    PATH="$HOME/.opencode/bin:$PATH"
 fi
 
 if [ -d "$HOME/.nvm" ]; then
@@ -12,13 +19,7 @@ if [ -d "$HOME/.nvm" ]; then
 fi
 
 if [ -d "$HOME/.juliaup/bin" ]; then
-    export PATH="$HOME/.juliaup/bin:$PATH"
-fi
-
-# PATH setup
-if [ -x "$HOME/.deno/bin/deno" ]; then
-    export DENO_INSTALL="$HOME/.deno"
-    export PATH="$DENO_INSTALL/bin:$PATH"
+    PATH="$HOME/.juliaup/bin:$PATH"
 fi
 
 if [ -s "$HOME/.cargo/env" ]; then
@@ -26,27 +27,28 @@ if [ -s "$HOME/.cargo/env" ]; then
 fi
 
 if [ -d "$HOME/.npm-global/bin" ]; then
-    export PATH="$HOME/.npm-global/bin:$PATH"
+     PATH="$HOME/.npm-global/bin:$PATH"
 fi
 
 if [ -d "$HOME/.local/share/bob/nvim-bin" ]; then
-    export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+    PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 fi
 
 if command -v go >/dev/null 2>&1; then
     export GOPATH="$HOME/.local/share/go"
-    export PATH="$GOPATH/bin:$PATH"
+     PATH="$GOPATH/bin:$PATH"
 elif [ -d "$HOME/.local/go" ]; then
     export GOPATH="$HOME/.local/share/go"
     export GOROOT="$HOME/.local/go"
-    export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+    PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 fi
 
 if [ -d "$HOME/.local/bin" ]; then
-    export PATH="$HOME/.local/bin:$PATH"
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 typeset -U PATH
+export PATH
 
 # Bat as man pager
 # if [ "$(which bat)" ]; then
