@@ -101,8 +101,8 @@ fi
 if command -v zoxide &>/dev/null; then
     eval "$(zoxide init zsh)"
 fi
-if [ -e /etc/zsh_command_not_found ]; then
-    source /etc/zsh_command_not_found
+if [ -s "/etc/zsh_command_not_found" ]; then
+    source "/etc/zsh_command_not_found"
 fi
 
 if [ -n "$NVM_DIR" ] && [ -s "$NVM_DIR/bash_completion" ]; then
